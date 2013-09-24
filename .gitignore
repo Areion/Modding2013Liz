@@ -1,0 +1,11 @@
+/Temp/
+/Library/
+/Build/
+
+*.pidb
+*.userprefs
+
+.DS_Store
+*.csproj
+*.unityproj
+*.sln

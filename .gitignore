@@ -4,8 +4,6 @@
 
 *.pidb
 *.userprefs
-
-.DS_Store
+*.DS_Store
 *.csproj
-*.unityproj
 *.sln

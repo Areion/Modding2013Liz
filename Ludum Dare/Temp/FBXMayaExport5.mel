@@ -1,0 +1,22 @@
+print "Starting maya loading and fbx conversion \n";
+			
+if (`file -q -exists "C:/Users/Areion/DOCUME~1/UNITYP~1/LUDUMD~1/Assets/Models/STICKF~1.MA"`)
+{
+	file -o "C:/Users/Areion/DOCUME~1/UNITYP~1/LUDUMD~1/Assets/Models/STICKF~1.MA";
+	FBXExportEmbeddedTextures -v false;
+	// FBXExportHardEdges -v true;
+	FBXExportApplyConstantKeyReducer -v false;
+	FBXExportShowUI -v false;
+
+	print "Before fbx export\n";
+	FBXExport -f "C:/Users/Areion/DOCUME~1/UNITYP~1/LUDUMD~1/Temp/ExportedFBXFile.fbx";
+	print "after fbx export\n";
+}
+else
+	print "Could not open Maya file.";
+
+system ("del \"C:\\Users\\Areion\\DOCUME~1\\UNITYP~1\\LUDUMD~1\\Temp\\CommandPipe\"");
+
+$donepipeKill = `fopen "C:/Users/Areion/DOCUME~1/UNITYP~1/LUDUMD~1/Temp/SyncPipeKill" "w"`;
+fwrite $donepipeKill "Done";
+fclose $donepipeKill;

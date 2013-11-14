@@ -1,6 +1,6 @@
-/Temp/
-/Library/
-/Build/
+*/Temp/*
+*/Library/*
+*/Builds/*
 
 *.pidb
 *.userprefs
